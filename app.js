@@ -13,39 +13,73 @@ const render = require("./lib/htmlRenderer");
 const teamMembers = [];
 
 const managerQuestions = [
-{   
-    type: "input",
-    name: "managerName",
-    message:"what is your name",
-},
-{   type: "input",
-    name: "id",
-    message:"what is your id"
-},
-{   type: "input",
-    name: "email",
-    message:"enter your email",
-    
-},
-{   type: "input",
-    name: "officeNumber",
-    message:"whats your office number"
-}];
+    {
+        type: "input",
+        name: "managerName",
+        message: "what is your name",
+    },
+    {
+        type: "input",
+        name: "id",
+        message: "what is your id"
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "enter your email",
+
+    },
+    {
+        type: "input",
+        name: "officeNumber",
+        message: "whats your office number"
+    }];
 function createManager() {
-    inquirer.prompt(managerQuestions).then(function(answers) {
+    inquirer.prompt(managerQuestions).then(function (answers) {
         const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber)
         teamMembers.push(manager);
-        //call a function to create a new employee
+        newEmployee();
     });
 }
-function newEmployee () {
-    //ask one question, list type add employee choices are intern, engineer or none.
-    //after .then create a switch statement
-    //routes two more functions create Engineer and create employee 
-    //if they select none you need a function to write to file with fs.
-}
-createManager();
+//call a function to create a new employee
+function newEmployee() {
+    inquirer.prompt([
+        {
+            type: "list",
+            name: "type",
+            message: "Which type of team member would you like to add?",
+            choices: [
+                "Engineer",
+                "Intern",
+                "I don't want to add any more team members"
+            ]
 
+        }
+    ])
+}
+
+switch (title) {
+    case "Manager":
+
+        // ask user of Manager's Office Number
+        await inquirer.prompt([
+            {
+                type: "input",
+                message: "What is your Manager's Office Number?",
+                name: "officeNo"
+            }
+        ])
+}
+
+//ask one question, list type add employee choices are intern, engineer or none.
+
+
+//after .then create a switch statement
+//routes two more functions create Engineer and create employee 
+//if they select none you need a function to write to file with fs.
+
+createManager();
+// newEmployee();
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
@@ -67,4 +101,4 @@ createManager();
 // and Intern classes should all extend from a class named Employee; see the directions
 // for further information. Be sure to test out each class and verify it generates an
 // object with the correct structure and methods. This structure will be crucial in order
-// for the provided `render` function to work! ```
+// for the provided `render` function to work! 
