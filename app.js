@@ -51,35 +51,40 @@ function newEmployee() {
             choices: [
                 "Engineer",
                 "Intern",
-                "I don't want to add any more team members"
+                "None"
             ]
 
         }
-    ])
-}
+        // create a switch statement
+    ]).then(function (answers) {
+        switch (answers.type) {
+            case "Engineer":
+                inquirer.prompt([
+                    {
+                        type: "input",
+                        message: "What is your Engineer's GitHub?",
+                        name: "github"
+                    }
+                ]);
+            case "Intern":
+                inquirer.prompt([
+                    {
+                        type: "input",
+                        message: "What school do you go to?",
+                        name: "school"
+                    }
 
-switch (title) {
-    case "Manager":
+                ]);
+                break
 
-        // ask user of Manager's Office Number
-        await inquirer.prompt([
-            {
-                type: "input",
-                message: "What is your Manager's Office Number?",
-                name: "officeNo"
-            }
-        ])
-}
-
-//ask one question, list type add employee choices are intern, engineer or none.
+        };
+    }
 
 
-//after .then create a switch statement
 //routes two more functions create Engineer and create employee 
 //if they select none you need a function to write to file with fs.
-
 createManager();
-// newEmployee();
+
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
