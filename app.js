@@ -11,7 +11,7 @@ const teamMembers = [];
 const managerQuestions = [
     {
         type: "input",
-        name: "managerName",
+        name: "name",
         message: "what is your name",
     },
     {
@@ -56,29 +56,84 @@ function newEmployee() {
                 inquirer.prompt([
                     {
                         type: "input",
+                        name: "name",
+                        message: "what is your engineer's name",
+                    },
+                    {
+                        type: "input",
+                        name: "id",
+                        message: "what is your engineer's id"
+                    },
+                    {
+                        type: "input",
+                        name: "email",
+                        message: "enter your engineer's email",
+                    },
+                    {
+                        type: "input",
                         message: "What is your Engineer's GitHub?",
-                        name: "github"
+                        name: "gitHub"
                     }
-                ]);
+                ]).then(answers => {
+                    const engineer = new Engineer (answers.name, answers.id, answers.email, answers.gitHub)
+                    console.log(engineer)
+                    teamMembers.push(engineer);
+                    newEmployee()
+                })
                 break;
             case "Intern":
                 inquirer.prompt([
                     {
                         type: "input",
+                        name: "name",
+                        message: "what is your intern's name",
+                    },
+                    {
+                        type: "input",
+                        name: "id",
+                        message: "what is your intern's id"
+                    },
+                    {
+                        type: "input",
+                        name: "email",
+                        message: "enter your intern's email",
+                    },
+                    {
+                        type: "input",
                         message: "What school do you go to?",
                         name: "school"
                     }
-                ]);
+                ]).then(answers => {
+                    const intern = new Intern (answers.name, answers.id, answers.email, answers.school)
+                    teamMembers.push(intern);
+                    newEmployee()
+                })
                 break;
             default:
-                console.log("Bad Input");
+                writeToFile("output/team.html",render(teamMembers))
         };
     })
 };
 
+// function to write team.html file
+function writeToFile(fileName, data) {
+    console.log("writeToFile")
+    fs.writeFile(fileName, data, function(err,response){
+    process.exit()
+    })
+}
+// function to initialize program
+function init() {
+    createManager()
+    // inquirer.prompt(managerQuestions).then(answers => {
+    //     writeToFile("output/team.html",render(answers))
+    //   })
+}
+// function call to initialize program
+init();
 
 //if they select none you need a function to write to file with fs.
-createManager();
+// createManager();
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 // After the user has input all employees desired, call the render function (required
