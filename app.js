@@ -13,21 +13,49 @@ const managerQuestions = [
         type: "input",
         name: "name",
         message: "what is your name",
+        validate: answer => {
+            if (answer !== "") {
+                return true  
+            }
+         return "name cannot be blank"
+        }
     },
     {
         type: "input",
         name: "id",
-        message: "what is your id"
+        message: "what is your id",
+        validate: answer => {
+            const pass = answer.match(/^[0-9]*$/)
+            if(pass && answer !== "") {
+                return true
+            }
+            return "must be a number code"
+        }
     },
     {
         type: "input",
         name: "email",
         message: "enter your email",
+        validate: answer => {
+            const pass = answer.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/)
+            if(pass && answer !== "") {
+                return true
+            }
+            return "must be a valid email address"
+        }
     },
     {
         type: "input",
         name: "officeNumber",
-        message: "whats your office number"
+        message: "whats your office number",
+        validate: answer => {
+            const pass = answer.match(/^[0-9]*$/)
+            if(pass && answer !== "") {
+                return true
+            }
+            return "must be a number code"
+        }
+
     }];
 function createManager() {
     inquirer.prompt(managerQuestions).then(function (answers) {
@@ -58,21 +86,48 @@ function newEmployee() {
                         type: "input",
                         name: "name",
                         message: "what is your engineer's name",
+                        validate: answer => {
+                            if (answer !== "") {
+                                return true  
+                            }
+                         return "name cannot be blank"
+                        }
                     },
                     {
                         type: "input",
                         name: "id",
-                        message: "what is your engineer's id"
+                        message: "what is your engineer's id",
+                        validate: answer => {
+                            const pass = answer.match(/^[0-9]*$/)
+                            if(pass && answer !== "") {
+                                return true
+                            }
+                            return "must be a number code"
+                        }
+                
                     },
                     {
                         type: "input",
                         name: "email",
                         message: "enter your engineer's email",
+                        validate: answer => {
+                            const pass = answer.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/)
+                            if(pass && answer !== "") {
+                                return true
+                            }
+                            return "must be a valid email address"
+                        }
                     },
                     {
                         type: "input",
                         message: "What is your Engineer's GitHub?",
-                        name: "gitHub"
+                        name: "gitHub",
+                        validate: answer => {
+                            if (answer !== "") {
+                                return true  
+                            }
+                         return "name cannot be blank"
+                        }
                     }
                 ]).then(answers => {
                     const engineer = new Engineer (answers.name, answers.id, answers.email, answers.gitHub)
@@ -87,21 +142,47 @@ function newEmployee() {
                         type: "input",
                         name: "name",
                         message: "what is your intern's name",
+                        validate: answer => {
+                            if (answer !== "") {
+                                return true  
+                            }
+                         return "name cannot be blank"
+                        }
                     },
                     {
                         type: "input",
                         name: "id",
-                        message: "what is your intern's id"
+                        message: "what is your intern's id",
+                        validate: answer => {
+                            const pass = answer.match(/^[0-9]*$/)
+                            if(pass && answer !== "") {
+                                return true
+                            }
+                            return "must be a number code"
+                        }
                     },
                     {
                         type: "input",
                         name: "email",
                         message: "enter your intern's email",
+                        validate: answer => {
+                            const pass = answer.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/)
+                            if(pass && answer !== "") {
+                                return true
+                            }
+                            return "must be a valid email address"
+                        }
                     },
                     {
                         type: "input",
                         message: "What school do you go to?",
-                        name: "school"
+                        name: "school",
+                        validate: answer => {
+                            if (answer !== "") {
+                                return true  
+                            }
+                         return "name cannot be blank"
+                        }
                     }
                 ]).then(answers => {
                     const intern = new Intern (answers.name, answers.id, answers.email, answers.school)
