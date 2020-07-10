@@ -1,12 +1,16 @@
+/* added teal background color to jumbotron */
 .jumbotron{
     background-color: teal;
 }
+/* added white color text to h1 */
 h1{
     color: white;
 }
+/* added blue background color to card header */
 .card-header{
     background-color: rgb(50, 120, 224);
 }
+/* added white color text to car title */
 .card-title{
     color: white;
 }

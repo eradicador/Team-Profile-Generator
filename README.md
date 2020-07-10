@@ -1,7 +1,8 @@
-# Readme Generator
+# Team Profile Generator
 
 ## Description
-
+As a developer an created an application that easy generates a html file for a project. The html will be generated from the node command line interface for a team manager that wants to put together a software engineering team. The application will prompt the user for information about the team manager and then information about the team members. The user can input any number of team members, and they may be a mix of engineers and interns. When the user has completed building the team, the application will create an HTML file that displays a nicely formatted team roster based on the information provided by the user. 
+This application will also pass all unit tests when the user runs `npm run test`.
 
 ## Screenshot 
 <img src ="screenshot.png" width="500">
@@ -15,7 +16,7 @@ https://drive.google.com/file/d/11OeFgU1hjMHxc3Gl5RUqD3w60WDyXIYD/view
 ## app.js
 
 
-
+## css
 
 
 ## Badge
