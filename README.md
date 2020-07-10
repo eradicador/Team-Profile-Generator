@@ -14,10 +14,31 @@ https://github.com/eradicador/Team-Profile-Generator
 https://drive.google.com/file/d/11OeFgU1hjMHxc3Gl5RUqD3w60WDyXIYD/view
 
 ## app.js
+lines 1 to 10 constants to require values for the functions
 
+lines 10 to 58 manager questions
+
+lines 60 to 66 function to create a manager
+
+lines 68 to 79 function call to create a new employee
+
+lines 81 to 192 created switch statements for engineer and intern questions
+line 194 this function writes text to team.html file
+
+lines 200 to 205 function to write team.html file
+
+lines 207 to 209 function to initialize program
+
+line 211 function call to initialize program
 
 ## css
+line 2 added teal background color to jumbotron
 
+line 6 added white color text to h1 
+
+line 10 added blue background color to card header 
+
+line 14 added white color text to car title 
 
 ## Badge
 ![GitHub license](https://img.shields.io/badge/license-MIT-brightgreen)
