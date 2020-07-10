@@ -1,6 +1,12 @@
 .jumbotron{
-    background-color: rgb(199, 78, 94);
+    background-color: rgb(216, 65, 85);
 }
 h1{
+    color: white;
+}
+.card-header{
+    background-color: rgb(50, 120, 224);
+}
+.card-title{
     color: white;
 }
