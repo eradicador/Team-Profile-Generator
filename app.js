@@ -131,7 +131,6 @@ function newEmployee() {
                     }
                 ]).then(answers => {
                     const engineer = new Engineer (answers.name, answers.id, answers.email, answers.gitHub)
-                    console.log(engineer)
                     teamMembers.push(engineer);
                     newEmployee()
                 })
