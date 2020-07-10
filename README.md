@@ -1,3 +1,23 @@
+# Readme Generator
+
+## Description
+
+
+## Screenshot 
+<img src ="screenshot.png" width="500">
+
+## Link to deployed app
+https://github.com/eradicador/Team-Profile-Generator
+
+## Link to app video walkthrough
+https://drive.google.com/file/d/11OeFgU1hjMHxc3Gl5RUqD3w60WDyXIYD/view
+
+## app.js
+
+
+
+
+
 ## Badge
 ![GitHub license](https://img.shields.io/badge/license-MIT-brightgreen)
 
